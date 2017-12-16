@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Item Finder</string>
+
+    <string name="title_item_list">Gegenstände</string>
+    <string name="title_info">Info</string>
+    <string name="title_add_item">Hinzufügen</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
