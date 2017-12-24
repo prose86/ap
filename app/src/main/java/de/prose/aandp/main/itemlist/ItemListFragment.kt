@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import de.prose.aandp.R
+import de.prose.aandp.database.AppDatabase
+import de.prose.aandp.database.Item
 
 
 /**
@@ -17,11 +19,10 @@ class ItemListFragment : Fragment(), ItemListContract.ItemsView  {
 
     var mPresenter : ItemListContract.ItemsPresenter? = null
 
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        ItemListPresenterImpl(this)
+        ItemListPresenterImpl(this, AppDatabase.getInstance(context).itemDao())
         return inflater!!.inflate(R.layout.fragment_item_list, container, false)
     }
 
@@ -41,7 +42,7 @@ class ItemListFragment : Fragment(), ItemListContract.ItemsView  {
     override fun showEmptyResult() {
     }
 
-    override fun showItems(list: List<Any>) {
+    override fun showItems(list: List<Item>) {
     }
 
     override fun showListLoading() {
